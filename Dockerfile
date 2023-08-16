@@ -26,6 +26,6 @@ WORKDIR /root
 
 RUN chmod +x /app/cmd/* /app/config/* /app/init.sh && \ 
     if [ -f /app/config/sources.list ]; then mv /app/config/sources.list /etc/apt/sources.list; fi 
-RUN DEBIAN_FRONTEND=noninteractive apt update && apt install -y procps cron ffmpeg python3-dev python3-pip unzip curl wget git davfs2 rclone
+RUN DEBIAN_FRONTEND=noninteractive apt update && apt install -y procps cron ffmpeg python3-dev python3-pip unzip curl wget git  rclone
     
 CMD ["/bin/bash","-c",". /app/config/export.sh && /app/init.sh"]
